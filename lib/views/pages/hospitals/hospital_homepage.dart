@@ -15,29 +15,16 @@ import '../../widgets/custom_silver_grid_delegate.dart';
 class HospitalHomePage extends StatelessWidget {
   final List<CategoryModel> _categoryList = [
     CategoryModel(
-      imageUrl: "assets/images/category/otc_medicine.png",
-      title: "DOCTORS",
-      color: const Color(0xff4cd1bc),
+      imageUrl: "assets/DoctorCategory/Doctors.png",
     ),
     CategoryModel(
-      imageUrl: "assets/images/category/diabetes_medicine.png",
-      title: "DENTIST",
-      color: const Color(0xff71b4fb),
+      imageUrl: "assets/DoctorCategory/Therapist.png",
     ),
     CategoryModel(
-      imageUrl: "assets/images/category/baby_mother.png",
-      title: "AYURVEDIC",
-      color: const Color(0xfffc9881),
+      imageUrl: "assets/DoctorCategory/Dentists.png",
     ),
     CategoryModel(
-      imageUrl: "assets/images/category/personal_care.png",
-      title: "THERAPIST",
-      color: const Color(0xff9ae571),
-    ),
-    CategoryModel(
-      imageUrl: "assets/images/category/diabetes_medicine.png",
-      title: "DOCTORS",
-      color: const Color(0xff4cd1bc),
+      imageUrl: "assets/DoctorCategory/Ayurvedic.png",
     ),
 
   ];
@@ -45,28 +32,18 @@ class HospitalHomePage extends StatelessWidget {
   final List<OfferModel> _offerList = [
     OfferModel(
       imageUrl: "assets/images/category/otc_medicine.png",
-      title: "OTC MEDICINE",
-      color: const Color(0xff4cd1bc),
     ),
     OfferModel(
       imageUrl: "assets/images/category/diabetes_medicine.png",
-      title: "DIABETES MEDICINES",
-      color: const Color(0xff71b4fb),
     ),
     OfferModel(
       imageUrl: "assets/images/category/baby_mother.png",
-      title: "BABY & MOTHER",
-      color: const Color(0xfffc9881),
     ),
     OfferModel(
       imageUrl: "assets/images/category/personal_care.png",
-      title: "PERSONAL CARE",
-      color: const Color(0xff9ae571),
     ),
     OfferModel(
       imageUrl: "assets/images/category/diabetes_medicine.png",
-      title: "WELLNESS ITEMS",
-      color: const Color(0xff4cd1bc),
     ),
 
   ];
@@ -146,7 +123,8 @@ class HospitalHomePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10,),
-              SizedBox(
+              Container(
+                color: AppColors.backgroundColor,
                 height: 300,
                 child: ListView.builder(
                     itemCount: 7,

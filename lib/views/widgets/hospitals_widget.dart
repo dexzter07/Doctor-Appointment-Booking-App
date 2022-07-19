@@ -6,11 +6,14 @@ class HospitalWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(4.0),
+      color: Colors.white,
       child: Column(
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 children: [
@@ -18,34 +21,40 @@ class HospitalWidget extends StatelessWidget {
                   Text("General Hospital", style: CustomTextStyle.smallTextStyle1(color:AppColors.disableButtonColor),),
                 ],
               ),
-              const SizedBox(width: 90,),
-              Container(
-                margin: const EdgeInsets.all(2),
-                height: 30,
-                width: 50,
-                color: Colors.green,
+              Row(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(2),
+                    height: 30,
+                    width: 50,
+                    color: Colors.green,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.all(2),
+                    height: 30,
+                    width: 50,
+                    color: Colors.green,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.all(2),
+                    height: 30,
+                    width: 50,
+                    color: Colors.green,
+                  ),
+                ],
               ),
-              Container(
-                margin: const EdgeInsets.all(2),
-                height: 30,
-                width: 50,
-                color: Colors.green,
-              ),
-              Container(
-                margin: const EdgeInsets.all(2),
-                height: 30,
-                width: 50,
-                color: Colors.green,
-              ),
+
             ],
           ),
+          const SizedBox(height: 10,),
           Row(
             children: [
               const Icon(Icons.add_location,size: 12, color: AppColors.disableButtonColor,),
               Text("Walter Street, Wellington, New York", style: CustomTextStyle.ultraSmallTextStyle(color:AppColors.disableButtonColor),),
-              const SizedBox(width: 130,),
-              const Icon(Icons.call,size: 12, color: Colors.blue,),
-              Text("Call", style: CustomTextStyle.ultraSmallBoldTextStyle(color:Colors.blue),),
+              const SizedBox(width: 100,),
+              const Icon(Icons.call,size: 16, color: Colors.blue,),
+              const SizedBox(width: 10,),
+              Text("Call", style: CustomTextStyle.smallBoldTextStyle1(color:Colors.blue),),
             ],
           )
         ],

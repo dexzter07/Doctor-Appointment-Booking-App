@@ -14,58 +14,29 @@ import '../../widgets/custom_silver_grid_delegate.dart';
 class HomePage extends StatelessWidget {
   final List<CategoryModel> _categoryList = [
     CategoryModel(
-        imageUrl: "assets/images/category/otc_medicine.png",
-        title: "OTC MEDICINE",
-        color: const Color(0xff4cd1bc),
+        imageUrl: "assets/Categories/Otc.png",
         ),
     CategoryModel(
-      imageUrl: "assets/images/category/diabetes_medicine.png",
-      title: "DIABETES MEDICINES",
-      color: const Color(0xff71b4fb),
+      imageUrl: "assets/Categories/diabetes_medicine.png",
     ),
     CategoryModel(
-      imageUrl: "assets/images/category/baby_mother.png",
-      title: "BABY & MOTHER",
-      color: const Color(0xfffc9881),
+      imageUrl: "assets/Categories/baby_mother.png",
     ),
     CategoryModel(
-      imageUrl: "assets/images/category/personal_care.png",
-      title: "PERSONAL CARE",
-      color: const Color(0xff9ae571),
+      imageUrl: "assets/Categories/personal_care.png",
     ),
     CategoryModel(
-      imageUrl: "assets/images/category/diabetes_medicine.png",
-      title: "WELLNESS ITEMS",
-      color: const Color(0xff4cd1bc),
+      imageUrl: "assets/Categories/wellness_item.png",
     ),
 
   ];
 
   final List<OfferModel> _offerList = [
     OfferModel(
-      imageUrl: "assets/images/category/otc_medicine.png",
-      title: "OTC MEDICINE",
-      color: const Color(0xff4cd1bc),
+      imageUrl: "assets/HomeBanner/Banner1.png",
     ),
     OfferModel(
-      imageUrl: "assets/images/category/diabetes_medicine.png",
-      title: "DIABETES MEDICINES",
-      color: const Color(0xff71b4fb),
-    ),
-    OfferModel(
-      imageUrl: "assets/images/category/baby_mother.png",
-      title: "BABY & MOTHER",
-      color: const Color(0xfffc9881),
-    ),
-    OfferModel(
-      imageUrl: "assets/images/category/personal_care.png",
-      title: "PERSONAL CARE",
-      color: const Color(0xff9ae571),
-    ),
-    OfferModel(
-      imageUrl: "assets/images/category/diabetes_medicine.png",
-      title: "WELLNESS ITEMS",
-      color: const Color(0xff4cd1bc),
+      imageUrl: "assets/HomeBanner/Banner2.png",
     ),
 
   ];
@@ -116,7 +87,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: 20,),
               Row(
                 children: [
-                  const Icon(Icons.add_location, color: AppColors.primaryColor,),
+                  Image.asset("assets/location_pin.png",height: 20,fit: BoxFit.cover,),
                   const SizedBox(width: 20,),
                   Text("Kolkata", style: CustomTextStyle.appBarTextStyle(color: AppColors.secondaryColor),),
                   const Spacer(),
@@ -125,8 +96,8 @@ class HomePage extends StatelessWidget {
                     child: Stack(
                       children: const [
                         Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: Icon(Icons.add_shopping_cart,color: AppColors.secondaryColor,),
+                          padding: EdgeInsets.all(8.0),
+                          child: Icon(Icons.add_shopping_cart,)
                         ),
                         Positioned(
                             top: 0,

@@ -11,27 +11,9 @@ class CustomOfferWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: AppConstants.screenVerticalPadding,horizontal: AppConstants.screenHorizontalPadding),
-      margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 4),
-      width: 210,
-      height: 120,
-      decoration: BoxDecoration(
-          color: offerModel!.color,
-          borderRadius: BorderRadius.circular(10)
-      ),
-      child: Row(
-        children: [
-          SizedBox(
-            width:80,
-            child: Wrap(children: [
-              Text(offerModel!.title.toString(), style: CustomTextStyle.mediumTextStyle(color: AppColors.backgroundColor),)
-            ]),
-          ),
-          const Spacer(),
-          Image.asset(offerModel!.imageUrl.toString(),width: 100, height: 40 ,fit: BoxFit.cover,),
-        ],
-      ),
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: Image.asset(offerModel!.imageUrl.toString(),fit: BoxFit.cover,),
     );
   }
 }

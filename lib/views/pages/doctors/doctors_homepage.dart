@@ -3,6 +3,7 @@ import 'package:doctor_zone_user/views/constants/app_constants.dart';
 import 'package:doctor_zone_user/views/styles/app_colors.dart';
 import 'package:doctor_zone_user/views/styles/custom_text_style.dart';
 import 'package:doctor_zone_user/views/widgets/custom_category_widget.dart';
+import 'package:doctor_zone_user/views/widgets/custom_doctor_category_widget.dart';
 import 'package:doctor_zone_user/views/widgets/custom_seller_widget.dart';
 import 'package:doctor_zone_user/views/widgets/offers_widgets.dart';
 import 'package:flutter/material.dart';
@@ -98,7 +99,7 @@ class DoctorHomePage extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: _categoryList.length,
                     itemBuilder: (context, index) {
-                      return CustomCategoryWidget(
+                      return CustomDoctorCategoryWidget(
                         categoryModel: _categoryList[index],
                       );
                     }),

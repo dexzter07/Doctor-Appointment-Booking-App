@@ -1,17 +1,20 @@
+import 'package:doctor_zone_user/controller/medicine/medicine_controller.dart';
 import 'package:doctor_zone_user/models/category_models.dart';
 import 'package:doctor_zone_user/views/constants/app_constants.dart';
+import 'package:doctor_zone_user/views/pages/medicines/cart.dart';
 import 'package:doctor_zone_user/views/styles/app_colors.dart';
 import 'package:doctor_zone_user/views/styles/custom_text_style.dart';
 import 'package:doctor_zone_user/views/widgets/custom_category_widget.dart';
 import 'package:doctor_zone_user/views/widgets/custom_seller_widget.dart';
 import 'package:doctor_zone_user/views/widgets/offers_widgets.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../../../models/offer_models.dart';
 import '../../../models/seller_models.dart';
 import '../../widgets/custom_silver_grid_delegate.dart';
 
 class HomePage extends StatelessWidget {
+  final MedicineController _medicineController = Get.put(MedicineController());
   final List<CategoryModel> _categoryList = [
     CategoryModel(
         imageUrl: "assets/Categories/Otc.png",
@@ -91,24 +94,29 @@ class HomePage extends StatelessWidget {
                   const SizedBox(width: 20,),
                   Text("Kolkata", style: CustomTextStyle.appBarTextStyle(color: AppColors.secondaryColor),),
                   const Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 4),
-                    child: Stack(
-                      children: const [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Icon(Icons.add_shopping_cart,)
-                        ),
-                        Positioned(
-                            top: 0,
-                            right: 0,
-                            child: CircleAvatar(
-                              radius: 8,
-                              backgroundColor: Colors.red,
-                              child: Text("1",style: TextStyle(color: Colors.white),),
-                            )
-                        )
-                      ],
+                  InkWell(
+                    onTap: (){
+                      Get.to(CartPage());
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 4),
+                      child: Stack(
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Icon(Icons.add_shopping_cart,)
+                          ),
+                          Positioned(
+                              top: 0,
+                              right: 0,
+                              child: CircleAvatar(
+                                radius: 8,
+                                backgroundColor: Colors.red,
+                                child: Obx(() => Text(_medicineController.cartList.length.toString(),style: CustomTextStyle.ultraSmallTextStyle(color: Colors.white),),
+                              ))
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -141,7 +149,10 @@ class HomePage extends StatelessWidget {
                 children: [
                   Text("Shop By Category", style: CustomTextStyle.mediumTextStyle(color:AppColors.disableButtonColor),),
                   const Spacer(),
-                  Text("View All", style: CustomTextStyle.boldMediumTextStyle(color: AppColors.primaryColor))
+                  InkWell(
+                      onTap: (){
+                      },
+                      child: Text("View All", style: CustomTextStyle.boldMediumTextStyle(color: AppColors.primaryColor)))
                 ],
               ),
               const SizedBox(height: 20,),

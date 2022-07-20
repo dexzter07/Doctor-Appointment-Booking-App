@@ -31,6 +31,9 @@ dependencies:
     sdk: flutter
   persistent_bottom_nav_bar:
   get: ^4.6.5
+  date_picker_timeline:
+  intl: ^0.17.0
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -72,6 +75,7 @@ flutter:
     - assets/HomeBanner/
     - assets/Icons/
     - assets/Medicines/
+    - assets/DoctorsLists/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

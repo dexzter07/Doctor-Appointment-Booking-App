@@ -14,7 +14,7 @@ class CustomCategoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        Get.to(const MedicineList());
+        Get.to(MedicineList());
       },
       child: Padding(
         padding: const EdgeInsets.all(4.0),
